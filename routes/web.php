@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\plantifeedcontroller;
 use App\Http\Controllers\ForumController;
 use App\Http\Controllers\InventoryController;
+use App\Http\Controllers\EventsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -71,6 +72,11 @@ Route::get('/thread/{threadId}', [ThreadController::class, 'showThread'])->name(
 Route::post('/thread/{threadId}/store-message', [ThreadController::class, 'storeMessage'])->name('store.message');
 
 Route::post('/mark-messages-as-read/{userId}', [ChatController::class, 'markMessagesAsRead']);
+
+Route::get('/event', [EventsController::class, 'index']);
+Route::post('/event/create', [EventsController::class, 'create']);
+Route::put('/event/update/{id}', [EventsController::class, 'update']);
+Route::delete('/event/delete/{id}', [EventsController::class, 'destroy']);
 
 
 
