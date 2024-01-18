@@ -548,11 +548,11 @@
                         </div>
 
                         <div class="dropdown ms-sm-3 header-item topbar-user">
-                            <button type="button" class="btn" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <button type="button" class="btn" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="d-flex align-items-center">
                                     <img class="rounded-circle header-profile-user" src="assets/images/users/avatar-1.jpg" alt="Header Avatar" />
                                     <span class="text-start ms-xl-2">
-                                        <span class="d-none d-xl-inline-block ms-1 fw-medium user-name-text">Vida</span>
+                                        <span class="d-none d-xl-inline-block ms-1 fw-medium user-name-text">{{ Auth::user()->firstname }}</span>
                                         <span class="d-none d-xl-block ms-1 fs-12 user-name-sub-text">Founder</span>
                                     </span>
                                 </span>
@@ -657,10 +657,19 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="/event" role="button">
-                                <i class="ri-calendar-2-line"></i>
-                                <span data-key="t-calendar">Calendar</span>
+                            <a class="nav-link menu-link" href="#sidebarDashboards" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarDashboards">
+                                <i class="ri-dashboard-2-line"></i> <span>Calendar</span>
                             </a>
+                            <div class="collapse menu-dropdown" id="sidebarDashboards">
+                                <ul class="nav nav-sm flex-column">
+                                    <li class="nav-item">
+                                        <a href="/" class="nav-link">Planting Calendar</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="/event" class="nav-link"> Event Calendar </a>
+                                    </li>
+                                </ul>
+                            </div>
                         </li>
 
                         <li class="nav-item">
@@ -669,6 +678,21 @@
                                 <span data-key="t-faqs">FaQs</span>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link" href="#sidebarDashboards" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarDashboards">
+                                <i class="ri-dashboard-2-line"></i> <span>Inventory</span>
+                            </a>
+                            <div class="collapse menu-dropdown" id="sidebarDashboards">
+                                <ul class="nav nav-sm flex-column">
+                                    <li class="nav-item">
+                                        <a href="/inventory/supplier" class="nav-link"> Supplier </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="/inventory/stocks" class="nav-link"> Stocks </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li> <!-- end Dashboard Menu -->
 
                         <li class="nav-item">
                             <a class="nav-link" href="task.html" role="button">
@@ -678,9 +702,15 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="chat.html" role="button">
+                            <a class="nav-link" href="{{ route('chat.index') }}" role="button">
                                 <i class="ri-wechat-line"></i>
                                 <span data-key="t-chat">Chat</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/plantifeed" role="button">
+                                <i class="ri-question-line"></i>
+                                <span>Plantifeed</span>
                             </a>
                         </li>
                     </ul>
