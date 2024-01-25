@@ -668,7 +668,7 @@
                                         <a href="/" class="nav-link">Planting Calendar</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="/fullcalender" class="nav-link"> Event Calendar </a>
+                                        <a href="/fullcalendar" class="nav-link"> Event Calendar </a>
                                     </li>
                                 </ul>
                             </div>

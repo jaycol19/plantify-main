@@ -8,6 +8,7 @@ use App\Http\Controllers\Api\plantifeedcontroller;
 use App\Http\Controllers\ForumController;
 use App\Http\Controllers\InventoryController;
 use App\Http\Controllers\ScheduleController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -75,8 +76,9 @@ Route::post('/mark-messages-as-read/{userId}', [ChatController::class, 'markMess
 
 
 // Start Full Calender=================================================================
-Route::get('/fullcalender', [ScheduleController::class, 'index']);
+Route::get('/fullcalendar', [ScheduleController::class, 'index']);
 Route::get('/events', [ScheduleController::class, 'getEvents']);
+
 Route::delete('/schedule/{id}', [ScheduleController::class, 'deleteEvent']);
 Route::put('/schedule/{id}', [ScheduleController::class, 'update']);
 Route::put('/schedule/{id}/resize', [ScheduleController::class, 'resize']);
@@ -84,6 +86,9 @@ Route::get('/events/search', [ScheduleController::class, 'search']);
 
 Route::view('add-schedule', 'pages.add');
 Route::post('create-schedule', [ScheduleController::class, 'create']);
+
+Route::get('/fullcalendar', [ScheduleController::class, 'index']);
+Route::post('/fullcalendar/action', [ScheduleController::class, 'action']);
 // End Full Calender=================================================================
 
 

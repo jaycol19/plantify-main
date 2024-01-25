@@ -10,6 +10,7 @@
     <div class="container-fluid">
 
    
+@section('content')
         <!-- start page title -->
         <div class="row">
             <div class="col-12">
@@ -35,7 +36,8 @@
                     <div class="col-xl-3">
                         <div class="card card-h-100">
                             <div class="card-body" style="display:flex; justify-content:center; align-items:center;">
-                            <button type="button" class="btn btn-info add-btn" data-bs-toggle="modal" id="create-btn" data-bs-target="#showModalExample"><i class="ri-add-line align-bottom me-1"> Create Event</i></button>
+                            <button type="button" class="btn btn-primary w-100" data-bs-toggle="modal" id="create-btn" data-bs-target="#showModalExample"><i class="mdi mdi-plus"></i>Create New Events</button>
+                            
                                         <button class="btn btn-soft-danger" id="remove-actions" onClick="deleteMultiple()"><i class="ri-delete-bin-2-line"></i></button>
                              </div>
 
@@ -56,99 +58,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div>
-                            <h5 class="mb-1">Upcoming Events</h5>
-                                <p class="text-muted">Don't miss scheduled events</p>
-                                    <div class="pe-2 me-n1 mb-3 simplebar-scrollable-y" data-simplebar="init" style="height: 400px"><div class="simplebar-wrapper" style="margin: 0px -8px 0px 0px;"><div class="simplebar-height-auto-observer-wrapper"><div class="simplebar-height-auto-observer"></div></div><div class="simplebar-mask"><div class="simplebar-offset" style="right: 0px; bottom: 0px;"><div class="simplebar-content-wrapper" tabindex="0" role="region" aria-label="scrollable content" style="height: 100%; overflow: hidden scroll;"><div class="simplebar-content" style="padding: 0px 8px 0px 0px;">
-                                        <div id="upcoming-event-list"><div class="card mb-3">                        
-                                            <div class="card-body">                            
-                                                <div class="d-flex mb-3">                                
-                                                    <div class="flex-grow-1">
-                                                        <i class="mdi mdi-checkbox-blank-circle me-2 text-info">
-
-                                                        </i><span class="fw-medium">4 Jan 2022 </span></div>                                
-                                                        <div class="flex-shrink-0"><small class="badge bg-primary-subtle text-primary ms-auto">8:00 AM to 12:00 AM</small>
-                                                    </div>
-                                                                                </div>                            
-                                                                                <h6 class="card-title fs-16"> World Braille Day</h6>                            
-                                                                                <p class="text-muted text-truncate-two-lines mb-0"> </p>                        
-                                                                            </div>                    
-                                                                        </div>
-                                                                        <div class="card mb-3">                        
-                                                                                <div class="card-body">                            
-                                                                                    <div class="d-flex mb-3">                                
-                                                                                        <div class="flex-grow-1"><i class="mdi mdi-checkbox-blank-circle me-2 text-info"></i><span class="fw-medium">30 Jan 2022 </span>
-                                                                                    </div>                               
-                                                                                     <div class="flex-shrink-0"><small class="badge bg-primary-subtle text-primary ms-auto">8:00 AM to 12:00 AM</small>
-                                                                                    </div>                           
-                                                                                 </div>                            
-                                                                                 <h6 class="card-title fs-16"> World Leprosy Day</h6>                            
-                                                                                 <p class="text-muted text-truncate-two-lines mb-0"> </p>                        
-                                                                                </div>                   
-                                                                             </div><div class="card mb-3">                        
-                                                                                    <div class="card-body">                           
-                                                                                         <div class="d-flex mb-3">                               
-                                                                                             <div class="flex-grow-1"><i class="mdi mdi-checkbox-blank-circle me-2 text-info"></i>
-                                                                                             <span class="fw-medium">21 Feb 2022 </span>
-                                                                                            </div>                               
-                                                                                             <div class="flex-shrink-0"><small class="badge bg-primary-subtle text-primary ms-auto">8:00 AM to 12:00 AM</small>
-                                                                                            </div>                           
-                                                                                         </div>                           
-                                                                                          <h6 class="card-title fs-16"> International Mother Language Day</h6>                            
-                                                                                          <p class="text-muted text-truncate-two-lines mb-0"> </p>                        
-                                                                                        </div>                    
-                                                                                    </div><div class="card mb-3">                        
-                                                                                        <div class="card-body">                            
-                                                                                            <div class="d-flex mb-3">                               
-                                                                                                 <div class="flex-grow-1"><i class="mdi mdi-checkbox-blank-circle me-2 text-info"></i>
-                                                                                                 <span class="fw-medium">22 Feb 2022 </span></div>                                
-                                                                                                 <div class="flex-shrink-0"><small class="badge bg-primary-subtle text-primary ms-auto">8:00 AM to 12:00 AM</small>
-                                                                                                </div>                           
-                                                                                             </div>                          
-                                                                                               <h6 class="card-title fs-16"> World Thinking Day</h6>                          
-                                                                                                 <p class="text-muted text-truncate-two-lines mb-0"> </p>                        
-                                                                                                </div>                    </div><div class="card mb-3">                        
-                                                                                                    <div class="card-body">                           
-                                                                                                         <div class="d-flex mb-3">                                
-                                                                                                            <div class="flex-grow-1"><i class="mdi mdi-checkbox-blank-circle me-2 text-info"></i>
-                                                                                                            <span class="fw-medium">8 Mar 2022 </span>
-                                                                                                        </div>                                
-                                                                                                        <div class="flex-shrink-0"><small class="badge bg-primary-subtle text-primary ms-auto">8:00 AM to 12:00 AM</small>
-                                                                                                    </div>                            
-                                                                                                </div>                           
-                                                                                                <h6 class="card-title fs-16"> International Women's Day</h6>                            
-                                                                                                <p class="text-muted text-truncate-two-lines mb-0"> </p>                  
-                                                                                                  
-                                                                                            </div>                  
-                                                                                         </div>
-                                                                                         <div class="card mb-3">                       
-                                                                                             <div class="card-body">                           
-                                                                                                 <div class="d-flex mb-3">                           
-                                                                                                         <div class="flex-grow-1"><i class="mdi mdi-checkbox-blank-circle me-2 text-info"></i>
-                                                                                                         <span class="fw-medium">21 Mar 2022 </span>
-                                                                                                        </div>                               
-                                                                                                         <div class="flex-shrink-0"><small class="badge bg-primary-subtle text-primary ms-auto">8:00 AM to 12:00 AM</small>
-                                                                                                        </div>                          
-                                                                                                      </div>                           
-                                                                                                       <h6 class="card-title fs-16"> International Mother Language Day</h6>                            <p class="text-muted text-truncate-two-lines mb-0"> </p>                        </div>                    </div><div class="card mb-3">                        <div class="card-body">                            <div class="d-flex mb-3">                                <div class="flex-grow-1"><i class="mdi mdi-checkbox-blank-circle me-2 text-info"></i><span class="fw-medium">22 Mar 2022 </span></div>                                <div class="flex-shrink-0"><small class="badge bg-primary-subtle text-primary ms-auto">8:00 AM to 12:00 AM</small></div>                            </div>                            <h6 class="card-title fs-16"> World Water Day</h6>                            <p class="text-muted text-truncate-two-lines mb-0"> </p>                        </div>                    </div><div class="card mb-3">                        <div class="card-body">                            <div class="d-flex mb-3">                                <div class="flex-grow-1"><i class="mdi mdi-checkbox-blank-circle me-2 text-info"></i><span class="fw-medium">7 Apr 2022 </span></div>                                <div class="flex-shrink-0"><small class="badge bg-primary-subtle text-primary ms-auto">8:00 AM to 12:00 AM</small></div>                            </div>                            <h6 class="card-title fs-16"> World Health Day</h6>                            <p class="text-muted text-truncate-two-lines mb-0"> </p>                        </div>                    </div><div class="card mb-3">                        <div class="card-body">                            <div class="d-flex mb-3">                                <div class="flex-grow-1"><i class="mdi mdi-checkbox-blank-circle me-2 text-info"></i><span class="fw-medium">16 Apr 2022 </span></div>                                <div class="flex-shrink-0"><small class="badge bg-primary-subtle text-primary ms-auto">8:00 AM to 12:00 AM</small></div>                            </div>                            <h6 class="card-title fs-16"> International Special Librarians Day</h6>                            <p class="text-muted text-truncate-two-lines mb-0"> </p>                        </div>                    </div><div class="card mb-3">                        <div class="card-body">                            <div class="d-flex mb-3">                                <div class="flex-grow-1"><i class="mdi mdi-checkbox-blank-circle me-2 text-info"></i><span class="fw-medium">22 Apr 2022 </span></div>                                <div class="flex-shrink-0"><small class="badge bg-primary-subtle text-primary ms-auto">8:00 AM to 12:00 AM</small></div>                            </div>                            <h6 class="card-title fs-16"> Earth Day</h6>                            <p class="text-muted text-truncate-two-lines mb-0"> </p>                        </div>                    </div><div class="card mb-3">                        <div class="card-body">                            <div class="d-flex mb-3">                                <div class="flex-grow-1"><i class="mdi mdi-checkbox-blank-circle me-2 text-primary"></i><span class="fw-medium">1 Jan 2024 </span></div>                                <div class="flex-shrink-0"><small class="badge bg-primary-subtle text-primary ms-auto">Full day event</small></div>                            </div>                            <h6 class="card-title fs-16"> All Day Event</h6>                            <p class="text-muted text-truncate-two-lines mb-0"> An all-day event is an event that lasts an entire day or longer</p>                        </div>                    </div><div class="card mb-3">                        <div class="card-body">                            <div class="d-flex mb-3">                                <div class="flex-grow-1"><i class="mdi mdi-checkbox-blank-circle me-2 text-warning"></i><span class="fw-medium">19 Jan 2024 to 21 Jan 2024 </span></div>                                <div class="flex-shrink-0"><small class="badge bg-primary-subtle text-primary ms-auto">Full day event</small></div>                            </div>                            <h6 class="card-title fs-16"> Visit Online Course</h6>                            <p class="text-muted text-truncate-two-lines mb-0"> Long Term Event means an incident that last longer than 12 hours.</p>                        </div>                    </div><div class="card mb-3">                        <div class="card-body">                            <div class="d-flex mb-3">                                <div class="flex-grow-1"><i class="mdi mdi-checkbox-blank-circle me-2 text-success"></i><span class="fw-medium">24 Jan 2024 </span></div>                                <div class="flex-shrink-0"><small class="badge bg-primary-subtle text-primary ms-auto">12:30 PM to 12:00 AM</small></div>                            </div>                            <h6 class="card-title fs-16"> Meeting With Designer</h6>                            <p class="text-muted text-truncate-two-lines mb-0"> Tell how to boost website traffic</p>                        </div>                    </div><div class="card mb-3">                        <div class="card-body">                            <div class="d-flex mb-3">                                <div class="flex-grow-1"><i class="mdi mdi-checkbox-blank-circle me-2 text-success"></i><span class="fw-medium">25 Jan 2024 </span></div>                                <div class="flex-shrink-0"><small class="badge bg-primary-subtle text-primary ms-auto">7:00 PM to 12:00 AM</small></div>                            </div>                            <h6 class="card-title fs-16"> Birthday Party</h6>                            <p class="text-muted text-truncate-two-lines mb-0"> Family slumber party – Bring out the blankets and pillows and have a family slumber party! Play silly party games, share special snacks and wind down the fun with a special movie.</p>                        </div>                    </div><div class="card mb-3">                        <div class="card-body">                            <div class="d-flex mb-3">                                <div class="flex-grow-1"><i class="mdi mdi-checkbox-blank-circle me-2 text-dark"></i><span class="fw-medium">28 Jan 2024 </span></div>                                <div class="flex-shrink-0"><small class="badge bg-primary-subtle text-primary ms-auto">Full day event</small></div>                            </div>                            <h6 class="card-title fs-16"> Click for Google</h6>                            <p class="text-muted text-truncate-two-lines mb-0"> </p>                        </div>                    </div><div class="card mb-3">                        <div class="card-body">                            <div class="d-flex mb-3">                                <div class="flex-grow-1"><i class="mdi mdi-checkbox-blank-circle me-2 text-primary"></i><span class="fw-medium">28 Jan 2024 to 1 Feb 2024 </span></div>                                <div class="flex-shrink-0"><small class="badge bg-primary-subtle text-primary ms-auto">Full day event</small></div>                            </div>                            <h6 class="card-title fs-16"> Repeating Event</h6>                            <p class="text-muted text-truncate-two-lines mb-0"> A recurring or repeating event is simply any event that you will occur more than once on your calendar. </p>                        </div>                    </div><div class="card mb-3">                        <div class="card-body">                            <div class="d-flex mb-3">                                <div class="flex-grow-1"><i class="mdi mdi-checkbox-blank-circle me-2 text-danger"></i><span class="fw-medium">2 Feb 2024 to 3 Feb 2024 </span></div>                                <div class="flex-shrink-0"><small class="badge bg-primary-subtle text-primary ms-auto">Full day event</small></div>                            </div>                            <h6 class="card-title fs-16"> Weekly Strategy Planning</h6>                            <p class="text-muted text-truncate-two-lines mb-0"> Strategies for Creating Your Weekly Schedule</p>                        </div>                    </div><div class="card mb-3">                        <div class="card-body">                            <div class="d-flex mb-3">                                <div class="flex-grow-1"><i class="mdi mdi-checkbox-blank-circle me-2 text-danger"></i><span class="fw-medium">15 Feb 2024 to 16 Feb 2024 </span></div>                                <div class="flex-shrink-0"><small class="badge bg-primary-subtle text-primary ms-auto">8:00 PM to 4:00 PM</small></div>                            </div>                            <h6 class="card-title fs-16"> Client Meeting with Alexis</h6>                            <p class="text-muted text-truncate-two-lines mb-0"> A meeting is a gathering of two or more people that has been convened for the purpose of achieving a common goal through verbal interaction, such as sharing information or reaching agreement.</p>                        </div>                    </div><div class="card mb-3">                        <div class="card-body">                            <div class="d-flex mb-3">                                <div class="flex-grow-1"><i class="mdi mdi-checkbox-blank-circle me-2 text-info"></i><span class="fw-medium">16 Feb 2024 </span></div>                                <div class="flex-shrink-0"><small class="badge bg-primary-subtle text-primary ms-auto">8:00 PM to 4:00 PM</small></div>                            </div>                            <h6 class="card-title fs-16"> Velzon Project Discussion with Team</h6>                            <p class="text-muted text-truncate-two-lines mb-0"> Tell how to boost website traffic</p>                        </div>                    </div></div>
-                                        </div></div></div></div><div class="simplebar-placeholder" style="width: 661px; height: 2289px;"></div></div><div class="simplebar-track simplebar-horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar" style="width: 0px; display: none;"></div></div><div class="simplebar-track simplebar-vertical" style="visibility: visible;"><div class="simplebar-scrollbar" style="height: 69px; display: block; transform: translate3d(0px, 200px, 0px);"></div></div></div>
-                                    </div>
-                        <div>
-                            <h5 class="mb-1">Scheduled Events</h5>
-                            <p class="text-muted">Don't miss scheduled events.</p>
-                            <div class="pe-2 me-n1 mb-3" data-simplebar style="height: 650px">
-                                <div id="upcoming-event-list"></div>
-                            </div>
-                        </div>
-                        
-                        
-                        <!--end card-->
-                        
+                      
                     </div> <!-- end col-->
-
-                    
-                    
-           
 
 
 <!-- ============================================================ -->
@@ -174,7 +85,6 @@
                 <div style='clear:both'></div>
 
                 <!-- Add New Event MODAL -->
-                     <!--Create Supplier Modal-->
                      <div class="modal fade" id="showModalExample" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered">
                                     <div class="modal-content">
@@ -206,19 +116,19 @@
 
                                                 <div class="mb-3">
                                                     <label for="location" class="form-label">Location</label>
-                                                    <input type="text" name="location" id="customername-field" class="form-control" placeholder="Enter Contact" required />
+                                                    <input type="text" name="location" id="customername-field" class="form-control" placeholder="Enter Location" required />
                                                 </div>
 
                                                 <div class="mb-3">
-                                                    <label for="description" class="form-label">Email</label>
-                                                    <input type="text" name="email" id="description" class="form-control" placeholder="Enter Email" required />
+                                                    <label for="description" class="form-label">Description</label>
+                                                    <input type="text" name="email" id="description" class="form-control" placeholder="Enter description" required />
                                                 </div>
 
                                             </div>
                                             <div class="modal-footer">
                                                 <div class="hstack gap-2 justify-content-end">
                                                     <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
-                                                    <button type="submit" class="btn btn-info">Add Supplier</button>
+                                                    <button type="submit" class="btn btn-info">Add Event</button>
                                                     <!-- <button type="button" class="btn btn-success" id="edit-btn">Update</button> -->
                                                 </div>
                                             </div>
@@ -226,6 +136,117 @@
                                     </div>
                                 </div>
                             </div> <!-- end modal-->
+
+    <!---event detail EventModal--->
+    <div class="modal fade" id="EventdetailModal" tabindex="-1" role="dialog" aria-labelledby="EventdetailModal" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content border-0">
+                                        <div class="modal-header p-3 bg-info-subtle">
+                                            <h5 class="modal-title" id="modal-title">Event details</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
+                                        </div>
+                                        <div class="modal-body p-4">
+                                        <form class="needs-validation view-event" name="event-form" id="form-event" novalidate="">
+                                            
+                                                <div class="event-details">
+                                                    <div class="d-flex mb-2">
+                                                        <div class="flex-grow-1 d-flex align-items-center">
+                                                            <div class="flex-shrink-0 me-3">
+                                                                <i class="ri-calendar-event-line text-muted fs-16"></i>
+                                                            </div>
+                                                            <div class="flex-grow-1">
+                                                            <h6 class="d-block fw-semibold mb-0"> <span id="eventtitle"></span></h6>
+                                                        </div>
+                                                            <div class="flex-grow-1">
+                                                                <h6 class="d-block fw-semibold mb-0" ><span id="eventstart"></span></h6>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="d-flex align-items-center mb-2">
+                                                        <div class="flex-shrink-0 me-3">
+                                                            <i class="ri-time-line text-muted fs-16"></i>
+                                                        </div>
+                                                        <div class="flex-grow-1">
+                                                            <h6 class="d-block fw-semibold mb-0"><span id="eventend"></span></h6>
+                                                        </div>
+                                                    </div>
+                                                    <div class="d-flex align-items-center mb-2">
+                                                        <div class="flex-shrink-0 me-3">
+                                                            <i class="ri-map-pin-line text-muted fs-16"></i>
+                                                        </div>
+                                                        <div class="flex-grow-1">
+                                                            <h6 class="d-block fw-semibold mb-0"> <span id="eventlocation"></span></h6>
+                                                        </div>
+                                                    </div>
+                                                    <div class="d-flex mb-3">
+                                                        <div class="flex-shrink-0 me-3">
+                                                            <i class="ri-discuss-line text-muted fs-16"></i>
+                                                        </div>
+                                                        <div class="flex-grow-1">
+                                                            <p class="d-block text-muted mb-0" id="eventdescription"></p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+
+                                                        <div class="modal-footer">
+                                                        <div class="hstack gap-2 justify-content-end">
+                                                        <button type="button" class="btn btn-danger" id="deleteEventBtn" id="deleteEventBtn">Delete</button>
+                                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editexampleModal">edit</button>
+                                                    
+                                                          </div>  
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                          
+                                            </form>
+                                        </div>
+                                    </div> <!-- end modal-content-->
+                                </div> <!-- end modal dialog-->
+                                
+                            </div>
+<!-- Update and Delete Event Modal -->
+<div class="modal fade" id="editexampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit Event</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <div class="form-group">
+      <div class="form-group">
+                    <label for="updateEventTitle">Event Name:</label>
+                    <input type="text" class="form-control" id="updateEventTitle">
+                </div>
+                <div class="form-group">
+                    <label for="Eventstart-datepicker">Start:</label>
+                    <input type="text" class="form-control" id="Eventstart-datepicker">
+                </div>
+                <div class="form-group">
+                    <label for="Eventend-datepicker">End:</label>
+                    <input type="text" class="form-control" id="Eventend-datepicker">
+                </div>
+                <div class="form-group">
+                    <label for="updateLocation">Location:</label>
+                    <input type="text" class="form-control" id="updateLocation">
+                </div>
+                <div class="form-group">
+                    <label for="updateDescription">Description:</label>
+                    <input type="text" class="form-control" id="updateDescription">
+                </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary"  id="updateEventBtn">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+ <!-- end modal-->
+
+
                 <!-- end modal-->
             </div>
         </div> <!-- end row-->
@@ -238,10 +259,13 @@
 
 
 
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    
 
     <script type="text/javascript">
         
@@ -263,36 +287,28 @@
             timeZone: 'UTC',
             events: '/events',
             editable: true,
+            selectable: true,
+            selectHelper: true,
+            select: function (start, end, allDay) {
+               // Close Update/Delete Event Modal if open
+               $('#EventdetailModal').modal('hide');
 
-            // Deleting The Event
-            eventContent: function(info) {
-                var eventTitle = info.event.title;
-                var eventElement = document.createElement('div');
-                eventElement.innerHTML = '<span style="cursor: pointer;">❌</span> ' + eventTitle;
-
-                eventElement.querySelector('span').addEventListener('click', function() {
-                    if (confirm("Are you sure you want to delete this event?")) {
-                        var eventId = info.event.id;
-                        $.ajax({
-                            method: 'DELETE',
-                            url: '/schedule/' + eventId,
-                            headers: {
-                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                            },
-                            success: function(response) {
-                                console.log('Event deleted successfully.');
-                                calendar.refetchEvents(); // Refresh events after deletion
-                            },
-                            error: function(error) {
-                                console.error('Error deleting event:', error);
-                            }
-                        });
-                    }
-                });
-                return {
-                    domNodes: [eventElement]
-                };
+                // Open Add Event Modal
+            $('#showModalExample').modal('show');
+                },
+               
+                eventClick: function (event) {
+               // Close Update/Delete Event Modal if open
+               $('#EventdetailModal').modal('show');
+               
+                // Display event details in the Update/Delete Event Modal
+                $('#updateEventTitle').val(event.title);
+                $('#Eventstart-datepicker').val(moment(event.start).format("YYYY-MM-DDTHH:mm"));
+                $('#Eventend-datepicker').val(moment(event.end).format("YYYY-MM-DDTHH:mm"));
+                $('#eventlocation').val(event.location);
+                $('#eventdescription').val(event.description);
             },
+
 
             // Drag And Drop
 
@@ -385,7 +401,8 @@
       dateFormat: "Y-m-d H:i", // Date and time format
     });
 
-   
+       
+
   </script>
 
 @include('templates.footer')

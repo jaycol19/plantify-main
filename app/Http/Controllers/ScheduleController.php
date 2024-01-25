@@ -9,6 +9,7 @@ class ScheduleController extends Controller
     //
     public function index()
     {
+        
         return view('pages.eventscalendar');
     }
 
@@ -30,8 +31,10 @@ class ScheduleController extends Controller
     {
         $schedules = Schedule::all();
         return response()->json($schedules);
+    
     }
 
+  
     public function deleteEvent($id)
     {
         $schedule = Schedule::findOrFail($id);
