@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\plantifeedcontroller;
 use App\Http\Controllers\ForumController;
 use App\Http\Controllers\InventoryController;
-use App\Http\Controllers\EventsController;
+use App\Http\Controllers\ScheduleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -73,11 +73,23 @@ Route::post('/thread/{threadId}/store-message', [ThreadController::class, 'store
 
 Route::post('/mark-messages-as-read/{userId}', [ChatController::class, 'markMessagesAsRead']);
 
-Route::get('/event', [EventsController::class, 'index']);
-Route::post('/event/create', [EventsController::class, 'create']);
-Route::put('/event/update/{id}', [EventsController::class, 'update']);
-Route::delete('/event/delete/{id}', [EventsController::class, 'destroy']);
 
+
+// Start Full Calender=================================================================
+Route::get('/fullcalendar', [ScheduleController::class, 'index']);
+Route::get('/events', [ScheduleController::class, 'getEvents']);
+
+Route::delete('/schedule/{id}', [ScheduleController::class, 'deleteEvent']);
+Route::put('/schedule/{id}', [ScheduleController::class, 'update']);
+Route::put('/schedule/{id}/resize', [ScheduleController::class, 'resize']);
+Route::get('/events/search', [ScheduleController::class, 'search']);
+
+Route::view('add-schedule', 'pages.add');
+Route::post('create-schedule', [ScheduleController::class, 'create']);
+
+Route::get('/fullcalendar', [ScheduleController::class, 'index']);
+Route::post('/fullcalendar/action', [ScheduleController::class, 'action']);
+// End Full Calender=================================================================
 
 
 

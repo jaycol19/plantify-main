@@ -24,6 +24,8 @@
     <!-- Custom Css-->
     <link href="{{ asset('assets/css/custom.min.css') }}" rel="stylesheet" type="text/css" />
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
 </head>
 
 <body>
@@ -666,7 +668,7 @@
                                         <a href="/" class="nav-link">Planting Calendar</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="/event" class="nav-link"> Event Calendar </a>
+                                        <a href="/fullcalendar" class="nav-link"> Event Calendar </a>
                                     </li>
                                 </ul>
                             </div>

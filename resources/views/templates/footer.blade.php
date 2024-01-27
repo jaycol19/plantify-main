@@ -60,6 +60,9 @@
 
 <script src="{{ asset('assets/libs/fullcalendar/index.global.min.js') }}"></script>
 
+<!-- flatpckr -->
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
 </body>
 
 </html>
