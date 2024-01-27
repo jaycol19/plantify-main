@@ -4,13 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Schedule;
+
+use Illuminate\Support\Facades\DB;
 class ScheduleController extends Controller
 {
     //
     public function index()
     {
-        
-        return view('pages.eventscalendar');
+        $schedules = DB::table('schedules')->orderBy('id', 'DESC')->get();
+        return view('pages.eventscalendar',['schedules'=>$schedules]);
     }
 
     public function create(Request $request)
@@ -23,24 +25,22 @@ class ScheduleController extends Controller
         $item->description = $request->description;
         $item->save();
 
-        return redirect('/fullcalender');
+        return redirect('/fullcalendar');
     }
-
-
+	
+	
     public function getEvents()
     {
         $schedules = Schedule::all();
         return response()->json($schedules);
-    
+		
     }
-
+	
   
-    public function deleteEvent($id)
+    public function deleteEvent(Request $request, $id)
     {
-        $schedule = Schedule::findOrFail($id);
-        $schedule->delete();
-
-        return response()->json(['message' => 'Event deleted successfully']);
+        $schedule = Schedule::find($request->id)->delete();
+        return response()->json($schedule);
     }
 
     public function update(Request $request, $id)
@@ -73,4 +73,6 @@ class ScheduleController extends Controller
 
         return response()->json($matchingEvents);
     }
+
+	
 }

@@ -30,9 +30,10 @@
 
         <div class="row">
             <div class="col-12">
-                
-                <div class="row">
+                 <!--start row-->
 
+                <div class="row">
+                 <!-- end col-->
                     <div class="col-xl-3">
                         <div class="card card-h-100">
                             <div class="card-body" style="display:flex; justify-content:center; align-items:center;">
@@ -54,11 +55,20 @@
                                         <h6 class="fs-15">Welcome to your Calendar!</h6>
                                         <p class="text-muted mb-0">Scheduled events will appear here.</p>
                                     </div>
-                                    
+                                 
                                 </div>
                             </div>
-                        </div>
-                      
+                            
+                     </div>
+                      <!----> @foreach ($schedules as $schedule) 
+                      <div class="card bg-light mb-3" style="max-width: 18rem;">
+  <div class="card-header">{{ $schedule->title}}</div>
+  <div class="card-body">
+    <h5 class="card-title">{{ $schedule->start}} to {{ $schedule->end}}</h5>
+    <p class="card-text">{{ $schedule->location}}</p>
+    <p class="card-text">{{ $schedule->description}}</p>
+  </div>
+</div>@endforeach
                     </div> <!-- end col-->
 
 
@@ -121,7 +131,7 @@
 
                                                 <div class="mb-3">
                                                     <label for="description" class="form-label">Description</label>
-                                                    <input type="text" name="email" id="description" class="form-control" placeholder="Enter description" required />
+                                                    <input type="text" name="description" id="description" class="form-control" placeholder="Enter description" required />
                                                 </div>
 
                                             </div>
@@ -155,7 +165,7 @@
                                                                 <i class="ri-calendar-event-line text-muted fs-16"></i>
                                                             </div>
                                                             <div class="flex-grow-1">
-                                                            <h6 class="d-block fw-semibold mb-0"> <span id="eventtitle"></span></h6>
+                                                            <h6 class="d-block fw-semibold mb-0"><span id="eventtitle"></span></h6>
                                                         </div>
                                                             <div class="flex-grow-1">
                                                                 <h6 class="d-block fw-semibold mb-0" ><span id="eventstart"></span></h6>
@@ -175,7 +185,7 @@
                                                             <i class="ri-map-pin-line text-muted fs-16"></i>
                                                         </div>
                                                         <div class="flex-grow-1">
-                                                            <h6 class="d-block fw-semibold mb-0"> <span id="eventlocation"></span></h6>
+                                                            <h6 class="d-block fw-semibold mb-0"><span id="eventlocation"></span></h6>
                                                         </div>
                                                     </div>
                                                     <div class="d-flex mb-3">
@@ -285,7 +295,7 @@
             },
             initialView: 'dayGridMonth',
             timeZone: 'UTC',
-            events: '/events',
+            events: '/fullcalendars',
             editable: true,
             selectable: true,
             selectHelper: true,
@@ -307,6 +317,8 @@
                 $('#Eventend-datepicker').val(moment(event.end).format("YYYY-MM-DDTHH:mm"));
                 $('#eventlocation').val(event.location);
                 $('#eventdescription').val(event.description);
+
+                
             },
 
 
@@ -381,8 +393,34 @@
                 }
             });
         }
+        $('#deleteEventBtn').on('click', function () {
 
+            // Close Update/Delete Event Modal
+            $('#editexampleModal').modal('hide');
 
+            var eventId = $(this).data('event-id');
+            if (confirm("Are you sure you want to delete this event?")) {
+                $.ajax({
+                    url: `/schedule/${eventId}`,
+                    type: "delete",
+                    headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
+                    data: {
+                        id: eventId,
+                        type: 'delete'
+                    },
+                    success: function (data) {
+                        calendar.fullCalendar('refetchEvents');
+                        $('#editexampleModal').modal('hide');
+                        alert("Event Deleted Successfully");
+                    },
+                    error: function (error) {
+                        console.error("Error deleting event:", error);
+                        alert("Error deleting event. Please try again.");
+                    }
+                });
+                $('#EventdetailModal').modal('hide');
+            }
+            });
        
         flatpickr("#datepicker", {
       enableTime: true, // Enable time selection

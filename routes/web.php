@@ -77,8 +77,8 @@ Route::post('/mark-messages-as-read/{userId}', [ChatController::class, 'markMess
 
 // Start Full Calender=================================================================
 Route::get('/fullcalendar', [ScheduleController::class, 'index']);
-Route::get('/events', [ScheduleController::class, 'getEvents']);
-
+Route::get('/fullcalendars', [ScheduleController::class, 'getEvents']);
+Route::get('/fullcalendars/{id}', [ScheduleController::class, 'getdata']);
 Route::delete('/schedule/{id}', [ScheduleController::class, 'deleteEvent']);
 Route::put('/schedule/{id}', [ScheduleController::class, 'update']);
 Route::put('/schedule/{id}/resize', [ScheduleController::class, 'resize']);
@@ -87,10 +87,8 @@ Route::get('/events/search', [ScheduleController::class, 'search']);
 Route::view('add-schedule', 'pages.add');
 Route::post('create-schedule', [ScheduleController::class, 'create']);
 
-Route::get('/fullcalendar', [ScheduleController::class, 'index']);
-Route::post('/fullcalendar/action', [ScheduleController::class, 'action']);
-// End Full Calender=================================================================
 
+// End Full Calender=================================================================
 
 
 
